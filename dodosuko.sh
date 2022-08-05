@@ -1,25 +1,26 @@
 #!/bin/bash
+
 for((i=0;i<12;i++));do
         if test $((RANDOM % 2)) -eq 1 ; then
-                dodosuko[i]="ドド"
+                d[i]="ドド"
         else
-                dodosuko[i]="スコ"
+                d[i]="スコ"
         fi
 done
 while :
 do
-if [[ ${dodosuko[@]} =~ (ド{2} (スコ ?){3}){3} ]] ; then
-        echo ${dodosuko[@]}" ラブ注入♥"
+if [[ ${d[@]} =~ (ド{2} (スコ ?){3}){3} ]] ; then
+        echo ${d[@]}" ラブ注入♥"
         break
 else
-        echo ${dodosuko[0]}
+        echo ${d[0]}
         for((i=0;i<11;i++));do
-        dodosuko[i]=${dodosuko[i+1]}
+        d[i]=${d[i+1]}
         done
         if test $((RANDOM % 2)) -eq 1 ; then
-                dodosuko[11]="ドド"
+                d[11]="ドド"
         else
-                dodosuko[11]="スコ"
+                d[11]="スコ"
         fi
 fi
 done
